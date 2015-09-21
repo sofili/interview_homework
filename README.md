@@ -6,8 +6,8 @@ GuideManager - Handle parsing the JSON response to the model
 ViewController - Display the object model/dictionary to the table view
 
 Model:
-GuideCollection
-  - Guide
+  -GuideCollection
+    - Guide
       - Venue
       
 Third-party framework:
