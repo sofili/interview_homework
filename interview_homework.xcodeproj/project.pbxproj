@@ -15,6 +15,7 @@
 		505FD0741BAF9B8D00232B15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 505FD0721BAF9B8D00232B15 /* LaunchScreen.storyboard */; };
 		505FD07F1BAF9B8E00232B15 /* interview_homeworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD07E1BAF9B8E00232B15 /* interview_homeworkTests.m */; };
 		505FD08A1BAF9B8E00232B15 /* interview_homeworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD0891BAF9B8E00232B15 /* interview_homeworkUITests.m */; };
+		505FD0981BAF9CC500232B15 /* JSONModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505FD0971BAF9CC500232B15 /* JSONModel.framework */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		505FD0851BAF9B8E00232B15 /* interview_homeworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = interview_homeworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		505FD0891BAF9B8E00232B15 /* interview_homeworkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = interview_homeworkUITests.m; sourceTree = "<group>"; };
 		505FD08B1BAF9B8E00232B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		505FD0971BAF9CC500232B15 /* JSONModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSONModel.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505FD0981BAF9CC500232B15 /* JSONModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 		505FD0581BAF9B8D00232B15 = {
 			isa = PBXGroup;
 			children = (
+				505FD0971BAF9CC500232B15 /* JSONModel.framework */,
 				505FD0631BAF9B8D00232B15 /* interview_homework */,
 				505FD07D1BAF9B8E00232B15 /* interview_homeworkTests */,
 				505FD0881BAF9B8E00232B15 /* interview_homeworkUITests */,
@@ -411,6 +415,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = interview_homework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sophia.interview-homework";
@@ -422,6 +430,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = interview_homework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sophia.interview-homework";
@@ -496,6 +508,7 @@
 				505FD0901BAF9B8E00232B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		505FD0911BAF9B8E00232B15 /* Build configuration list for PBXNativeTarget "interview_homeworkTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +517,7 @@
 				505FD0931BAF9B8E00232B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		505FD0941BAF9B8E00232B15 /* Build configuration list for PBXNativeTarget "interview_homeworkUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +526,7 @@
 				505FD0961BAF9B8E00232B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
