@@ -12,10 +12,4 @@
 
 #define propertyAsString(property) NSStringFromSelector(@selector(property))
 
-//+(JSONKeyMapper*)keyMapper
-//{
-//    JSONKeyMapper *jsonKeyMapper = [[JSONKeyMapper alloc] initWithDictionary:@{@"venue":propertyAsString(venueArray)}];
-//    return jsonKeyMapper;
-//}
-
 @end

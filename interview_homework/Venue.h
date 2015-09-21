@@ -15,6 +15,7 @@
 
 @interface Venue : JSONModel
 
-@property (nonatomic, assign) NSString<Optional> *venue;
+@property (nonatomic, strong) NSString<Optional> *city;
+@property (nonatomic, strong) NSString<Optional> *state;
 
 @end
