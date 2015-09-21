@@ -16,6 +16,11 @@
 		505FD07F1BAF9B8E00232B15 /* interview_homeworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD07E1BAF9B8E00232B15 /* interview_homeworkTests.m */; };
 		505FD08A1BAF9B8E00232B15 /* interview_homeworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD0891BAF9B8E00232B15 /* interview_homeworkUITests.m */; };
 		505FD0981BAF9CC500232B15 /* JSONModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505FD0971BAF9CC500232B15 /* JSONModel.framework */; settings = {ASSET_TAGS = (); }; };
+		505FD09B1BAFA17C00232B15 /* Guide.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD09A1BAFA17C00232B15 /* Guide.m */; settings = {ASSET_TAGS = (); }; };
+		505FD09E1BAFA32600232B15 /* GuideCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD09D1BAFA32600232B15 /* GuideCollection.m */; settings = {ASSET_TAGS = (); }; };
+		505FD0A21BAFAB5600232B15 /* Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD0A11BAFAB5600232B15 /* Communication.m */; settings = {ASSET_TAGS = (); }; };
+		505FD0A51BAFAD9B00232B15 /* GuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD0A41BAFAD9B00232B15 /* GuideManager.m */; settings = {ASSET_TAGS = (); }; };
+		505FD0A91BAFB45D00232B15 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD0A81BAFB45D00232B15 /* Venue.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,18 @@
 		505FD0891BAF9B8E00232B15 /* interview_homeworkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = interview_homeworkUITests.m; sourceTree = "<group>"; };
 		505FD08B1BAF9B8E00232B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		505FD0971BAF9CC500232B15 /* JSONModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSONModel.framework; sourceTree = "<group>"; };
+		505FD0991BAFA17C00232B15 /* Guide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guide.h; sourceTree = "<group>"; };
+		505FD09A1BAFA17C00232B15 /* Guide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guide.m; sourceTree = "<group>"; };
+		505FD09C1BAFA32600232B15 /* GuideCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideCollection.h; sourceTree = "<group>"; };
+		505FD09D1BAFA32600232B15 /* GuideCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideCollection.m; sourceTree = "<group>"; };
+		505FD09F1BAFAB0E00232B15 /* CommunicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationDelegate.h; sourceTree = "<group>"; };
+		505FD0A01BAFAB5600232B15 /* Communication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Communication.h; sourceTree = "<group>"; };
+		505FD0A11BAFAB5600232B15 /* Communication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Communication.m; sourceTree = "<group>"; };
+		505FD0A31BAFAD9B00232B15 /* GuideManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideManager.h; sourceTree = "<group>"; };
+		505FD0A41BAFAD9B00232B15 /* GuideManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideManager.m; sourceTree = "<group>"; };
+		505FD0A61BAFB06500232B15 /* GuideManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideManagerDelegate.h; sourceTree = "<group>"; };
+		505FD0A71BAFB45D00232B15 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		505FD0A81BAFB45D00232B15 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +122,7 @@
 		505FD0631BAF9B8D00232B15 /* interview_homework */ = {
 			isa = PBXGroup;
 			children = (
+				505FD0AA1BAFB8D400232B15 /* Model */,
 				505FD0671BAF9B8D00232B15 /* AppDelegate.h */,
 				505FD0681BAF9B8D00232B15 /* AppDelegate.m */,
 				505FD06A1BAF9B8D00232B15 /* ViewController.h */,
@@ -114,6 +132,12 @@
 				505FD0721BAF9B8D00232B15 /* LaunchScreen.storyboard */,
 				505FD0751BAF9B8D00232B15 /* Info.plist */,
 				505FD0641BAF9B8D00232B15 /* Supporting Files */,
+				505FD09F1BAFAB0E00232B15 /* CommunicationDelegate.h */,
+				505FD0A01BAFAB5600232B15 /* Communication.h */,
+				505FD0A11BAFAB5600232B15 /* Communication.m */,
+				505FD0A31BAFAD9B00232B15 /* GuideManager.h */,
+				505FD0A41BAFAD9B00232B15 /* GuideManager.m */,
+				505FD0A61BAFB06500232B15 /* GuideManagerDelegate.h */,
 			);
 			path = interview_homework;
 			sourceTree = "<group>";
@@ -142,6 +166,19 @@
 				505FD08B1BAF9B8E00232B15 /* Info.plist */,
 			);
 			path = interview_homeworkUITests;
+			sourceTree = "<group>";
+		};
+		505FD0AA1BAFB8D400232B15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				505FD0991BAFA17C00232B15 /* Guide.h */,
+				505FD09A1BAFA17C00232B15 /* Guide.m */,
+				505FD0A71BAFB45D00232B15 /* Venue.h */,
+				505FD0A81BAFB45D00232B15 /* Venue.m */,
+				505FD09C1BAFA32600232B15 /* GuideCollection.h */,
+				505FD09D1BAFA32600232B15 /* GuideCollection.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +311,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505FD09E1BAFA32600232B15 /* GuideCollection.m in Sources */,
 				505FD06C1BAF9B8D00232B15 /* ViewController.m in Sources */,
+				505FD0A21BAFAB5600232B15 /* Communication.m in Sources */,
+				505FD0A51BAFAD9B00232B15 /* GuideManager.m in Sources */,
 				505FD0691BAF9B8D00232B15 /* AppDelegate.m in Sources */,
+				505FD0A91BAFB45D00232B15 /* Venue.m in Sources */,
 				505FD0661BAF9B8D00232B15 /* main.m in Sources */,
+				505FD09B1BAFA17C00232B15 /* Guide.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

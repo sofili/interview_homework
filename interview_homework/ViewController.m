@@ -7,8 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "GuideManager.h"
+#import "GuideManagerDelegate.h"
+#import "GuideCollection.h"
+#import "Communication.h"
 
-@interface ViewController ()
+@interface ViewController () <GuideManagerDelegate> {
+
+    GuideManager *manager;
+}
 
 @end
 
@@ -18,7 +25,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self fetchJSON];
+    manager = [[GuideManager alloc] init];
+    manager.communicator = [[Communication alloc] init];
+    manager.communicator.delegate = manager;
+    manager.delegate = self;
+    
+    [manager.communicator getJSON];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,25 +38,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)fetchJSON {
-    
-    
-    NSString *urlAsString = @"https://www.guidebook.com/service/v2/upcomingGuides/";
-    NSURL *url = [[NSURL alloc] initWithString:urlAsString];
-    NSLog(@"%@", urlAsString);
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-
-    NSURLSessionDataTask *task = [session dataTaskWithURL:url
-                                            completionHandler:
-                                  ^(NSData *data, NSURLResponse *response, NSError *connectionError) {
-                                      
-                                      NSLog(@"HTTPS Response: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-                                      
-                                  }];
-    
-    [task resume];
-
+#pragma mark - MeetupManagerDelegate
+- (void)didReceiveGuide:(GuideCollection *)guideCollection
+{
+    NSLog(@"got data!");
 }
+
+- (void)fetchingFailedWithError:(NSError *)error
+{
+    NSLog(@"Error %@; %@", error, [error localizedDescription]);
+}
+
+
 
 @end
