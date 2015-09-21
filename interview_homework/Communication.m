@@ -13,7 +13,7 @@
 @implementation Communication
 
 -(void)getJSON {
-
+    // Sending async request to the API
     NSString *urlAsString = @"https://www.guidebook.com/service/v2/upcomingGuides/";
     NSURL *url = [[NSURL alloc] initWithString:urlAsString];
     

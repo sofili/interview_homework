@@ -30,8 +30,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     manager = [[GuideManager alloc] init];
-    //guidesModel = [[GuideCollection alloc] init];
-    
     manager.communicator = [[Communication alloc] init];
     manager.communicator.delegate = manager;
     manager.delegate = self;
@@ -51,7 +49,6 @@
     
     _guideDict = guideDict;
     
-
     NSArray * unSortedDateArray = [guideDict allKeys];
     sortedDays = [unSortedDateArray sortedArrayUsingSelector:@selector(compare:)];
     
@@ -98,7 +95,13 @@
     [cell.nameLabel setText:guide.name];
     [cell.endDateLabel setText:guide.endDate];
     [cell.cityLabel setText:guide.venue.city];
-    [cell.stateLabel setText:guide.venue.state];
+    
+    if (guide.venue.city && guide.venue.state) {
+        [cell.stateLabel setText:[NSString stringWithFormat:@", %@", guide.venue.state]];
+    }
+    else {
+        [cell.stateLabel setText:guide.venue.state];
+    }
     
     return cell;
 }

@@ -125,6 +125,7 @@
 		505FD0631BAF9B8D00232B15 /* interview_homework */ = {
 			isa = PBXGroup;
 			children = (
+				505FD0AE1BB07D4A00232B15 /* Delegate */,
 				505FD0AA1BAFB8D400232B15 /* Model */,
 				505FD0671BAF9B8D00232B15 /* AppDelegate.h */,
 				505FD0681BAF9B8D00232B15 /* AppDelegate.m */,
@@ -135,12 +136,10 @@
 				505FD0721BAF9B8D00232B15 /* LaunchScreen.storyboard */,
 				505FD0751BAF9B8D00232B15 /* Info.plist */,
 				505FD0641BAF9B8D00232B15 /* Supporting Files */,
-				505FD09F1BAFAB0E00232B15 /* CommunicationDelegate.h */,
 				505FD0A01BAFAB5600232B15 /* Communication.h */,
 				505FD0A11BAFAB5600232B15 /* Communication.m */,
 				505FD0A31BAFAD9B00232B15 /* GuideManager.h */,
 				505FD0A41BAFAD9B00232B15 /* GuideManager.m */,
-				505FD0A61BAFB06500232B15 /* GuideManagerDelegate.h */,
 				505FD0AB1BAFBC8F00232B15 /* TableCell.h */,
 				505FD0AC1BAFBC8F00232B15 /* TableCell.m */,
 			);
@@ -184,6 +183,15 @@
 				505FD09D1BAFA32600232B15 /* GuideCollection.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		505FD0AE1BB07D4A00232B15 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				505FD09F1BAFAB0E00232B15 /* CommunicationDelegate.h */,
+				505FD0A61BAFB06500232B15 /* GuideManagerDelegate.h */,
+			);
+			name = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

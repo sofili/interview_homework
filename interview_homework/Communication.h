@@ -13,6 +13,7 @@
 @interface Communication : NSObject
 @property (weak, nonatomic) id<CommunicationDelegate> delegate;
 
+// Get JSON response from the API
 -(void)getJSON;
 
 @end

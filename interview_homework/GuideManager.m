@@ -10,9 +10,8 @@
 
 @implementation GuideManager
 
-
+//parse JSON response to dictionary, using startDate as key
 -(void)parseToDict : (GuideCollection *)guideCollection {
-    //parse JSON response to dictionary, using startDate as key
     
     NSMutableDictionary *guideDict = [[NSMutableDictionary alloc] init];
     
