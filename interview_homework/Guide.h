@@ -16,8 +16,8 @@
 
 @interface Guide : JSONModel
 
-@property (nonatomic, assign) NSString<Optional> *startDate;
-@property (nonatomic, assign) NSString<Optional> *endDate;
+@property (nonatomic, strong) NSString<Optional> *startDate;
+@property (nonatomic, strong) NSString<Optional> *endDate;
 @property (nonatomic, strong) NSString<Optional> *name;
 @property (nonatomic, strong) NSString<Optional> *url;
 @property (nonatomic, strong) NSString<Optional> *login_required;

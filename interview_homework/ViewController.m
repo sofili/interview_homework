@@ -12,8 +12,11 @@
 #import "GuideCollection.h"
 #import "Communication.h"
 
+#import "TableCell.h"
+
 @interface ViewController () <GuideManagerDelegate> {
 
+    NSArray *guides;
     GuideManager *manager;
 }
 
@@ -26,9 +29,13 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     manager = [[GuideManager alloc] init];
+    //guidesModel = [[GuideCollection alloc] init];
+    
     manager.communicator = [[Communication alloc] init];
     manager.communicator.delegate = manager;
     manager.delegate = self;
+    
+    guides = [[NSMutableArray alloc] init];
     
     [manager.communicator getJSON];
 }
@@ -38,9 +45,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - MeetupManagerDelegate
+#pragma mark - ManagerDelegate
 - (void)didReceiveGuide:(GuideCollection *)guideCollection
 {
+    guides = guideCollection.guideArray;
+    [self.tableView reloadData];
+
     NSLog(@"got data!");
 }
 
@@ -48,6 +58,26 @@
 {
     NSLog(@"Error %@; %@", error, [error localizedDescription]);
 }
+
+#pragma mark - Table View
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return guides.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    Guide *guide = guides[indexPath.row];
+    [cell.nameLabel setText:guide.name];
+    [cell.endDateLabel setText:guide.endDate];
+    [cell.locationLabel setText:[NSString stringWithFormat:@"%@, %@", @"city", @"state"]];
+    
+    return cell;
+}
+
 
 
 

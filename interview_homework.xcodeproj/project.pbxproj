@@ -21,6 +21,7 @@
 		505FD0A21BAFAB5600232B15 /* Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD0A11BAFAB5600232B15 /* Communication.m */; settings = {ASSET_TAGS = (); }; };
 		505FD0A51BAFAD9B00232B15 /* GuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD0A41BAFAD9B00232B15 /* GuideManager.m */; settings = {ASSET_TAGS = (); }; };
 		505FD0A91BAFB45D00232B15 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD0A81BAFB45D00232B15 /* Venue.m */; settings = {ASSET_TAGS = (); }; };
+		505FD0AD1BAFBC8F00232B15 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FD0AC1BAFBC8F00232B15 /* TableCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		505FD0A61BAFB06500232B15 /* GuideManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideManagerDelegate.h; sourceTree = "<group>"; };
 		505FD0A71BAFB45D00232B15 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
 		505FD0A81BAFB45D00232B15 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		505FD0AB1BAFBC8F00232B15 /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
+		505FD0AC1BAFBC8F00232B15 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				505FD0A31BAFAD9B00232B15 /* GuideManager.h */,
 				505FD0A41BAFAD9B00232B15 /* GuideManager.m */,
 				505FD0A61BAFB06500232B15 /* GuideManagerDelegate.h */,
+				505FD0AB1BAFBC8F00232B15 /* TableCell.h */,
+				505FD0AC1BAFBC8F00232B15 /* TableCell.m */,
 			);
 			path = interview_homework;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505FD0AD1BAFBC8F00232B15 /* TableCell.m in Sources */,
 				505FD09E1BAFA32600232B15 /* GuideCollection.m in Sources */,
 				505FD06C1BAF9B8D00232B15 /* ViewController.m in Sources */,
 				505FD0A21BAFAB5600232B15 /* Communication.m in Sources */,

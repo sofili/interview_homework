@@ -14,7 +14,7 @@
 
 @interface GuideCollection : JSONModel
 
-@property(nonatomic, retain) NSArray<Guide, Optional> *guideArray;
-@property(nonatomic, retain) NSString<Optional> *total;
+@property(nonatomic, strong) NSArray<Guide, Optional> *guideArray;
+@property(nonatomic, strong) NSString<Optional> *total;
 
 @end
