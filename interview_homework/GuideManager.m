@@ -11,8 +11,31 @@
 @implementation GuideManager
 
 
--(void)getResponse {
-
+-(void)parseToDict : (GuideCollection *)guideCollection {
+    //parse JSON response to dictionary, using startDate as key
+    
+    NSMutableDictionary *guideDict = [[NSMutableDictionary alloc] init];
+    
+    for (Guide * guide in guideCollection.guideArray) {
+        
+        NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM dd, yyyy"];
+        NSDate *startDate = [formatter dateFromString:guide.startDate];
+        
+        
+        NSMutableArray *arrayForADate = [[NSMutableArray alloc] init];
+        if ([guideDict objectForKey:startDate]) {
+            
+            arrayForADate = [guideDict objectForKey:startDate];
+        }
+        else {
+            [guideDict setObject:arrayForADate forKey:startDate];
+        }
+        [arrayForADate addObject:guide];
+  
+    }
+    
+    [self.delegate didReceiveGuide:guideDict];
 }
 
 
@@ -28,7 +51,7 @@
         [self.delegate fetchingFailedWithError:error];
         
     } else {
-        [self.delegate didReceiveGuide:guideCollection];
+        [self parseToDict:guideCollection];
     }
 }
 

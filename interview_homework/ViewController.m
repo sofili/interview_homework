@@ -16,8 +16,9 @@
 
 @interface ViewController () <GuideManagerDelegate> {
 
-    NSArray *guides;
+    NSMutableDictionary *_guideDict;
     GuideManager *manager;
+    NSArray *sortedDays;
 }
 
 @end
@@ -35,7 +36,7 @@
     manager.communicator.delegate = manager;
     manager.delegate = self;
     
-    guides = [[NSMutableArray alloc] init];
+    _guideDict = [[NSMutableDictionary alloc] init];
     
     [manager.communicator getJSON];
 }
@@ -46,12 +47,15 @@
 }
 
 #pragma mark - ManagerDelegate
-- (void)didReceiveGuide:(GuideCollection *)guideCollection
-{
-    guides = guideCollection.guideArray;
-    [self.tableView reloadData];
+- (void)didReceiveGuide:(NSMutableDictionary *)guideDict {
+    
+    _guideDict = guideDict;
+    
 
-    NSLog(@"got data!");
+    NSArray * unSortedDateArray = [guideDict allKeys];
+    sortedDays = [unSortedDateArray sortedArrayUsingSelector:@selector(compare:)];
+    
+    [self.tableView reloadData];
 }
 
 - (void)fetchingFailedWithError:(NSError *)error
@@ -61,19 +65,40 @@
 
 #pragma mark - Table View
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [_guideDict count];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return guides.count;
+    NSDate *thisDate = [sortedDays objectAtIndex:section];
+    NSArray *eventsOnThisDay = [_guideDict objectForKey:thisDate];
+    return [eventsOnThisDay count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSDate *thisDate = [sortedDays objectAtIndex:section];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM dd, yyyy"];
+    
+    return [formatter stringFromDate:thisDate];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    Guide *guide = guides[indexPath.row];
+    NSDate *thisDay = [sortedDays objectAtIndex:indexPath.section];
+    NSArray *eventsOnThisDay = [_guideDict objectForKey:thisDay];
+    
+    Guide * guide = [eventsOnThisDay objectAtIndex:indexPath.row];
     [cell.nameLabel setText:guide.name];
     [cell.endDateLabel setText:guide.endDate];
-    [cell.locationLabel setText:[NSString stringWithFormat:@"%@, %@", @"city", @"state"]];
+    [cell.cityLabel setText:guide.venue.city];
+    [cell.stateLabel setText:guide.venue.state];
     
     return cell;
 }

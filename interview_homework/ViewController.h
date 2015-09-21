@@ -10,7 +10,5 @@
 
 @interface ViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *g;
-
 @end
 

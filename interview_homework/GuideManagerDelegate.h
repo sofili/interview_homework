@@ -10,7 +10,7 @@
 
 @protocol GuideManagerDelegate
 
-- (void)didReceiveGuide:(GuideCollection *)guideCollection;
+- (void)didReceiveGuide:(NSMutableDictionary *)guideDict;
 - (void)fetchingFailedWithError:(NSError *)error;
 
 @end
